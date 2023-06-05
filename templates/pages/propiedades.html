@@ -1,0 +1,57 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load bootstrap_icons %}
+{% load humanize %}
+
+{% block content %}
+<div id="main-margin" class="mx-4 row row-cols-1 row-cols-md-3 g-0 justify-content-evenly">
+  <!--CARD START-->
+  {% for propiedad in propiedades %}
+  <div class="col m-2">
+    <div {% if propiedad.destacado %} id="destacado" class="card-propiedad card" {% else %} class="card-propiedad card"
+      {% endif %}>
+      {% for imagen in propiedad.imagen_set.all %}
+      {% if forloop.first %}
+      <img src="{{ imagen.imagen.url }}" alt="">
+      {% endif %}
+      {% endfor %}
+      <!--CARD BODY START-->
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          {% if propiedad.destacado %}
+          <a id="btn-destacado" class="btn disabled" href="#" aria-disabled="true" tabindex="-1"
+            role="button">Destacado</a>
+          {% endif %}
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            <li class="list-group-item text-2s">{{ propiedad.categoria }}</li>
+            {% if propiedad.dolares %}
+            <li class="list-group-item text-1s">USD {{ propiedad.precio|intcomma }}</li>
+            {% else %}
+            <li class="list-group-item text-1s">${{ propiedad.precio|intcomma }}</li>
+            {% endif %}
+            <li class="list-group-item text-1s">{% bs_icon 'signpost-split' %}{{ propiedad.direccion.title }} - {{ propiedad.numero_direccion }}</li>
+          </div>
+          {% if propiedad.ambientes or propiedad.habitaciones or propiedad.baños %}
+          <hr>
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly" style="margin-bottom: 0.5rem;">
+            {% if propiedad.ambientes %}
+            <li class="list-group-item">{% bs_icon 'door-open' %}Ambientes - {{ propiedad.ambientes }}</li>
+            {% endif %}
+            {% if propiedad.habitaciones %}
+            <li class="list-group-item">{% bs_icon 'lamp' %}Habitaciones - {{ propiedad.habitaciones }}</li>
+            {% endif %}
+            {% if propiedad.baños %}
+            <li class="list-group-item">{% bs_icon 'door-closed' %}Baños - {{ propiedad.baños }}</li>
+            {% endif %}
+          </div>
+          {% endif %}
+          <a class="btn" href="{{ propiedad.get_absolute_url }}">+ Ver Más</a>
+        </ul>
+      </div>
+      <!--CARD BODY END-->
+    </div>
+  </div>
+  {% endfor %}
+  <!--CARD END-->
+</div>
+{% endblock content %}

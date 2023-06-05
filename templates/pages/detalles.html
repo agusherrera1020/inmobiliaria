@@ -1,0 +1,76 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load bootstrap_icons %}
+{% load humanize %}
+
+{% block content %}
+<div id="main-margin-detalles" class="mx-4 row row-cols-1 row-cols-md-1">
+  <div class="col p-1">
+    <div class="card border-0">
+      <div class="d-flex flex-row flex-wrap justify-content-center">
+        {% for imagen in propiedad.imagen_set.all %}
+        <div class="p-2 image-container">
+          <img class="border" src="{{ imagen.imagen.url }}"
+            alt="{{ img.imagen.url }}">
+        </div>
+        {% endfor %}
+      </div>
+      <div id="card-body-detalles" class="card-body">
+        <ul class="list-group list-group-flush">
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            <li class="list-group-item text-1s">${{ propiedad.precio|intcomma }}</li>
+            <li class="list-group-item text-1s">{% bs_icon 'signpost-split' %}{{ propiedad.direccion.title }} - {{ propiedad.numero_direccion }}</li>
+          </div>
+          {% if propiedad.duracion_contrato or propiedad.expensas or propiedad.antiguedad %}
+          <hr>
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            {% if propiedad.duracion_contrato %}
+            <li class="list-group-item text-2s">{% bs_icon 'calendar' %}Contrato - {{ propiedad.duracion_contrato }}</li>
+            {% endif %}
+            {% if propiedad.expensas %}
+            <li class="list-group-item text-2s">{% bs_icon 'cash' %}Expensas - ${{ propiedad.expensas|intcomma }}</li>
+            {% endif %}
+            {% if propiedad.antiguedad %}
+            <li class="list-group-item text-2s">{% bs_icon 'house-up' %}Año de Construcción - {{ propiedad.antiguedad }}</li>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if propiedad.ambientes or propiedad.habitaciones or propiedad.baños or propiedad.garage %}
+          <hr>
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            {% if propiedad.ambientes %}
+            <li class="list-group-item text-2s">{% bs_icon 'door-open' %}Ambientes - {{ propiedad.ambientes }}</li>
+            {% endif %}
+            {% if propiedad.habitaciones %}
+            <li class="list-group-item text-2s">{% bs_icon 'lamp' %}Habitaciones - {{ propiedad.habitaciones }}</li>
+            {% endif %}
+            {% if propiedad.baños %}
+            <li class="list-group-item text-2s">{% bs_icon 'door-closed' %}Baños - {{ propiedad.baños }}</li>
+            {% endif %}
+            {% if propiedad.garage %}
+            <li class="list-group-item">{% bs_icon 'car-front' %}Garage - {{ propiedad.garage }}</li>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% if propiedad.niños or propiedad.mascotas %}
+          <hr>
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            {% if propiedad.niños %}
+            <li class="list-group-item text-2s">{% bs_icon 'balloon' %}Niños - {{ propiedad.niños }}</li>
+            {% endif %}
+            {% if propiedad.mascotas %}
+            <li class="list-group-item text-2s">{% bs_icon 'balloon-heart' %}Mascotas - {{ propiedad.mascotas }}</li>
+            {% endif %}
+          </div>
+          {% endif %}
+          <hr>
+          <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            <li class="list-group-item text-2s">{% bs_icon 'buildings' %}{{ propiedad.inmobiliaria.title }}</li>
+            <li class="list-group-item text-2s">{% bs_icon 'telephone' %}{{ propiedad.telefono_inmobiliaria }}</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
