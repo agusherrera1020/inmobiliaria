@@ -30,19 +30,32 @@ body {
     width: fit-content;
 }
 
-.navbar-bg a {
+.navbar-brand {
+    pointer-events: none;
+}
+
+#navbarNav a,
+.navbar-brand {
     color: var(--gray-300);
     border-radius: 10px;
 }
 
-.navbar-bg a:hover {
+.navbar-brand:hover {
+    color: var(--gray-300);
+}
+
+.navbar-brand:focus {
+    color: var(--gray-300);
+}
+
+#navbarNav a:hover {
     color: white;
     background-color: var(--gray-700);
     border: var(--gray-300);
     border-radius: 10px;
 }
 
-.navbar-bg a:focus {
+#navbarNav a:focus {
     color: var(--gray-300);
     border: var(--gray-300);
 }

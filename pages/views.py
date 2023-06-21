@@ -8,10 +8,6 @@ from .models import Propiedad, Imagen
 # Create your views here.
 
 
-class InicioPageView(generic.TemplateView):
-    template_name = "pages/inicio.html"
-
-
 class PropiedadListView(generic.ListView):
     model = Propiedad
     template_name = "pages/propiedades.html"
