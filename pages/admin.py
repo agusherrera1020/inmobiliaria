@@ -20,7 +20,12 @@ class PropiedadAdmin(admin.ModelAdmin):
         "numero_direccion",
         "precio",
     )  # Campos a mostrar en la lista
-    list_filter = ("precio", "ambientes", "habitaciones")  # Filtros en la barra lateral
+    list_filter = (
+        "metros_cuadrados",
+        "precio",
+        "ambientes",
+        "habitaciones",
+    )  # Filtros en la barra lateral
     search_fields = ("nombre", "apellido", "direccion")  # Campos de búsqueda
     fieldsets = (
         (
@@ -38,7 +43,18 @@ class PropiedadAdmin(admin.ModelAdmin):
                 )
             },
         ),
-        ("Detalles", {"fields": ("ambientes", "habitaciones", "baños", "garage")}),
+        (
+            "Detalles",
+            {
+                "fields": (
+                    "metros_cuadrados",
+                    "ambientes",
+                    "habitaciones",
+                    "baños",
+                    "garage",
+                )
+            },
+        ),
         (
             "Otros",
             {

@@ -22,15 +22,10 @@ class Propiedad(models.Model):
     apellido = models.CharField(max_length=50, verbose_name="Apellido")
     correo = models.CharField(max_length=100, verbose_name="Dirección Electrónica")
     telefono = models.CharField(max_length=50, verbose_name="Número Telefónico")
-    inmobiliaria = models.CharField(
-        max_length=50,
-        default="Nombre de Inmobiliaria",
-        verbose_name="Nombre de Inmobiliaria",
-    )
-    telefono_inmobiliaria = models.CharField(
-        max_length=50,
-        default="2244-554488",
-        verbose_name="Número de Inmobiliaria",
+    metros_cuadrados = models.IntegerField(
+        blank=True,
+        null=True,
+        verbose_name="Metros Cuadrados",
     )
     habitaciones = models.IntegerField(
         blank=True,
