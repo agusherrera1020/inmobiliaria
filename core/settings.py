@@ -155,8 +155,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# csrf_cookie_secure = env.bool("CSRF_COOKIE_SECURE", default=False)
-# CSRF_COOKIE_SECURE = csrf_cookie_secure
+csrf_cookie_secure = env.bool("CSRF_COOKIE_SECURE", default=False)
+CSRF_COOKIE_SECURE = csrf_cookie_secure
 
-# session_cookie_secure = env.bool("SESSION_COOKIE_SECURE", default=False)
-# SESSION_COOKIE_SECURE = session_cookie_secure
+session_cookie_secure = env.bool("SESSION_COOKIE_SECURE", default=False)
+SESSION_COOKIE_SECURE = session_cookie_secure
