@@ -35,8 +35,8 @@ DEBUG = debug
 
 allowed_hosts = env.list("ALLOWED_HOSTS")
 ALLOWED_HOSTS = allowed_hosts
-# csrf_trusted_origins = env.list("CSRF_TRUSTED_ORIGINS")
-# CSRF_TRUSTED_ORIGINS = csrf_trusted_origins
+csrf_trusted_origins = env.list("CSRF_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = csrf_trusted_origins
 
 # Application definition
 
