@@ -29,7 +29,11 @@
             {% else %}
             <li class="list-group-item text-1s">${{ propiedad.precio|intcomma }}</li>
             {% endif %}
+            {% if propiedad.numero_direccion %}
             <li class="list-group-item text-1s">{% bs_icon 'signpost-split' %}{{ propiedad.direccion.title }} - {{ propiedad.numero_direccion }}</li>
+            {% else %}
+            <li class="list-group-item text-1s">{% bs_icon 'signpost-split' %}{{ propiedad.direccion.title }}</li>
+            {% endif %}
           </div>
           {% if propiedad.ambientes or propiedad.habitaciones or propiedad.baños or propiedad.metros_cuadrados%}
           <hr>

@@ -11,7 +11,9 @@ class Propiedad(models.Model):
     dolares = models.BooleanField(verbose_name="Dolares")
     direccion = models.CharField(max_length=100, verbose_name="Dirección")
     numero_direccion = models.IntegerField(
-        verbose_name="Número de Dirección", default=0
+        blank=True,
+        null=True,
+        verbose_name="Número de Dirección",
     )
     categoria = models.CharField(
         max_length=10,
