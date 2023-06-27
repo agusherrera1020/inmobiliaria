@@ -21,9 +21,12 @@
             <li class="list-group-item text-1s">${{ propiedad.precio|intcomma }}</li>
             <li class="list-group-item text-1s">{% bs_icon 'signpost-split' %}{{ propiedad.direccion.title }} - {{ propiedad.numero_direccion }}</li>
           </div>
-          {% if propiedad.duracion_contrato or propiedad.expensas or propiedad.antiguedad %}
+          {% if propiedad.duracion_contrato or propiedad.expensas or propiedad.antiguedad or propiedad.metros_cuadrados %}
           <hr>
           <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+            {% if propiedad.metros_cuadrados %}
+            <li class="list-group-item text-2s">{% bs_icon 'arrows-angle-expand' %}{{ propiedad.metros_cuadrados }}m²</li>
+            {% endif %}
             {% if propiedad.duracion_contrato %}
             <li class="list-group-item text-2s">{% bs_icon 'calendar' %}Contrato - {{ propiedad.duracion_contrato }}</li>
             {% endif %}

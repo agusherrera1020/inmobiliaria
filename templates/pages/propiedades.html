@@ -31,9 +31,12 @@
             {% endif %}
             <li class="list-group-item text-1s">{% bs_icon 'signpost-split' %}{{ propiedad.direccion.title }} - {{ propiedad.numero_direccion }}</li>
           </div>
-          {% if propiedad.ambientes or propiedad.habitaciones or propiedad.baños %}
+          {% if propiedad.ambientes or propiedad.habitaciones or propiedad.baños or propiedad.metros_cuadrados%}
           <hr>
           <div class="d-flex flex-wrap align-items-center justify-content-evenly" style="margin-bottom: 0.5rem;">
+            {% if propiedad.metros_cuadrados %}
+            <li class="list-group-item">{% bs_icon 'arrows-angle-expand' %}{{ propiedad.metros_cuadrados }}m²</li>
+            {% endif %}
             {% if propiedad.ambientes %}
             <li class="list-group-item">{% bs_icon 'door-open' %}Ambientes - {{ propiedad.ambientes }}</li>
             {% endif %}
