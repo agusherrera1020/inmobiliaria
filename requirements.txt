@@ -3,7 +3,7 @@ certifi==2023.5.7
 charset-normalizer==3.1.0
 dj-database-url==2.0.0
 dj-email-url==1.0.6
-Django==4.2.1
+Django==4.2.3
 django-bootstrap-icons==0.8.3
 django-bootstrap5==23.1
 django-cache-url==3.4.4
