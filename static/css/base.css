@@ -93,7 +93,7 @@ footer {
     padding: 1rem;
 }
 
-/*PROPIEDADES LIST PAGE*/
+/*PROPIEDADES PAGE*/
 #main-margin {
     margin-top: 4rem;
 }
@@ -173,7 +173,7 @@ footer {
     border-radius: 0 0 0.375rem 0.375rem;
 }
 
-/*PROPIEDADES DETALLES PAGE*/
+/*DETALLES PAGE*/
 
 #main-margin-detalles {
     margin: 6rem 0 4rem 0;
@@ -210,6 +210,19 @@ footer {
 
 #card-body-detalles {
     border-radius: 0.357rem 0.357rem 0.357rem 0.357rem;
+}
+
+#card-body-detalles button {
+    border-radius: 0.375rem;
+}
+
+#card-body-detalles button svg {
+    margin-right: 5px;
+}
+
+#card-body-detalles button a {
+    text-decoration: none;
+    color: unset;
 }
 
 #main-margin-detalles .card-body {
