@@ -239,6 +239,26 @@ footer {
     padding: 1rem;
 }
 
-#contact-links {
+.contact-links a {
     color: var(--gray-950);
+}
+
+.contact-links button {
+    background-color: var(--gray-950);
+    color: white;
+    border-radius: 0.375rem;
+}
+
+.contact-links button:hover, .contact-links button:active {
+    background-color: var(--gray-600);
+    color: white;
+}
+
+.contact-links button svg {
+    margin-right: 5px;
+}
+
+.contact-links button a {
+    text-decoration: none;
+    color: unset;
 }
