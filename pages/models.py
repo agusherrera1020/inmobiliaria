@@ -68,6 +68,7 @@ class Propiedad(models.Model):
     antiguedad = models.IntegerField(
         blank=True, null=True, verbose_name="Antigüedad de la Construcción"
     )
+    info_extra = models.TextField(blank=True, null=True, verbose_name="Información extra")
     destacado = models.BooleanField(verbose_name="Destacado")
 
     class Meta:

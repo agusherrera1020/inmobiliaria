@@ -52,6 +52,7 @@ class PropiedadAdmin(admin.ModelAdmin):
                     "habitaciones",
                     "baños",
                     "garage",
+                    'info_extra'
                 )
             },
         ),
