@@ -4,6 +4,12 @@
 {% load humanize %}
 
 {% block content %}
+<nav class="filter-nav nav nav-pills flex-column flex-sm-row mx-4 justify-content-center">
+  <a class="filter-link text-sm-center nav-link" data-categoria="Venta">En Venta</a>
+  <a class="filter-link text-sm-center nav-link" data-categoria="Alquiler">En Alquiler</a>
+  <a id="clean-filters" class="text-sm-center nav-link" href="{% url 'propiedades' %}">Limpiar filtros</a>
+</nav>
+<hr class="filter-hr">
 <div id="main-margin" class="mx-4 row row-cols-1 row-cols-md-3 g-0 justify-content-evenly">
   <!--CARD START-->
   {% for propiedad in propiedades %}

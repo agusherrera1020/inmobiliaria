@@ -10,6 +10,8 @@
     --gray-100: #f3f4f6;
     --gray-50: #f9fafb;
     --indigo-500: #8b5cf6;
+    --blue-600: #2563eb;
+    --red-600: #dc2626;
 }
 
 /*_BASE.HTML*/
@@ -94,6 +96,49 @@ footer {
 }
 
 /*PROPIEDADES PAGE*/
+.filter-nav {
+    margin-top: 3.5rem;
+}
+
+.nav-pills .nav-links {
+    border: 1px solid var(--gray-300);
+    border-radius: 0.375rem;
+}
+
+.nav-pills .nav-link:hover {
+    border: 1px solid var(--blue-600);
+    color: white;
+    background-color: var(--blue-600);
+}
+
+.nav-pills .nav-links:focus {
+    border: 1px solid white;
+    color: white;
+    background-color: var(--blue-600);
+}
+
+.nav-pills .nav-links:active {
+    border: 1px solid white;
+    color: white;
+    background-color: var(--blue-600);
+}
+
+#clean-filters {
+    background-color: var(--red-600);
+    color: white;
+}
+
+.filter-nav a {
+    color: var(--gray-800);
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+}
+
+.filter-hr {
+    margin: 0.5rem 0 0 0;
+    box-shadow: 0 1px 3px 0 var(--gray-950);
+}
+
 #main-margin {
     margin-top: 4rem;
 }
