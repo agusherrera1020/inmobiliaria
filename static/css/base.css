@@ -32,10 +32,6 @@ body {
     width: fit-content;
 }
 
-.navbar-brand {
-    pointer-events: none;
-}
-
 #navbarNav a,
 .navbar-brand {
     color: var(--gray-300);
